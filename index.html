@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Learnability Enhancement for Low-light Raw Denoising: A Data Perspective</title>
+    <title>EL2NM: Extremely Low-light Noise Modeling Through Diffusion Iteration</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
@@ -32,38 +32,27 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <h1 style="font-family: Lato;">Learnability Enhancement for Low-light Raw Denoising: <br> A Data Perspective</h1>
-            <h4 style="color:#5a6268;">TPAMI 2024 / ACMMM 2022 (Best Paper Runner-Up Award)</h4>
+            <h1 style="font-family: Lato;">EL2NM: Extremely Low-light <br> Noise Modeling Through Diffusion Iteration</h1>
+            <h4 style="color:#5a6268;">CVPR Workshops 2024</h4>
             <hr>
-            <h5> <a href="https://fenghansen.github.io/" target="_blank">Hansen Feng</a><sup>1</sup>, 
-              <a href="https://wang-lizhi.github.io/" target="_blank">Lizhi Wang</a><sup>1</sup>, 
-                Yuzhi Wang<sup>2</sup>, Haoqiang Fan<sup>2</sup>, Hua Huang<sup>3</sup>
+            <h5> <a href="https://optimistqaq.github.io/" target="_blank">Jiahao Qin</a><sup>1</sup>, 
+                Pinle Qin<sup>*, 1</sup>, Rui Chai<sup>1</sup>, Jia Qin<sup>1</sup>, Zanxia Jin<sup>1</sup>
             </h5>
             <p style="font-size: large; font-weight: 300;">
-              <sup>1</sup>Beijing Institute of Technology &nbsp;&nbsp;
-              <sup>2</sup>Megvii Technology &nbsp;&nbsp;
-              <sup>3</sup>Beijing Normal University &nbsp;&nbsp; 
+              <sup>1</sup>North University of China &nbsp;&nbsp;
             </p>
             <div class="row justify-content-center">
               <div class="column">
                 <p class="mb-5"><a class="btn btn-large btn-light" href="https://ieeexplore.ieee.org/abstract/document/10207751" role="button"  target="_blank">
-                  <i class="fa fa-file"></i> Paper (TPAMI)</a> </p>
-              </div>
-              <div class="column">
-                <p class="mb-5"><a class="btn btn-large btn-light" href="https://arxiv.org/abs/2207.06103" role="button"  target="_blank">
-                  <i class="fa fa-file"></i> Paper (MM)</a> </p>
+                  <i class="fa fa-file"></i> Paper (CVPRW 2024)</a> </p>
               </div>
               <div class="column">
                 <p class="mb-5"><a class="btn btn-large btn-light" href="https://github.com/megvii-research/PMN/tree/TPAMI" role="button"  target="_blank">
-                  <i class="fa fa-github"></i> Code (TPAMI)</a> </p>
-              </div>
-              <div class="column">
-                <p class="mb-5"><a class="btn btn-large btn-light" href="https://github.com/megvii-research/PMN" role="button"  target="_blank">
-                  <i class="fa fa-github"></i> Code (MM)</a> </p>
+                  <i class="fa fa-github"></i> Code (CVPRW 2024)</a> </p>
               </div>
               <div class="column">
                   <p class="mb-5"><a class="btn btn-large btn-light" href="https://pan.baidu.com/s/1fXlb-Q_ofHOtVOufe5cwDg?pwd=vmcl" role="button">
-                    <i class="fa fa-cloud-download"></i> Dataset (LRID)</a> </p>
+                    <i class="fa fa-cloud-download"></i> Dataset (Starlight)</a> </p>
               </div>
             </div>
           </div>
@@ -80,14 +69,14 @@
         <div class="col-12 text-center">
           <h3>Abstract</h3>
             <hr style="margin-top:0px">
-          <p class="text-justify">Low-light raw image denoising is an essential task in computational photography, to which the learning-based method has become the mainstream solution. 
-            The standard paradigm of the learning-based method is to learn the mapping between the paired real data, i.e., the low-light noisy image and its clean counterpart. 
-            However, the limited data volume, complicated noise model, and underdeveloped data quality have constituted the learnability bottleneck of the data mapping between paired real data, which limits the performance of the learning-based method. 
-            To break through the bottleneck, we introduce a learnability enhancement strategy for low-light raw image denoising by reforming paired real data according to noise modeling. 
-            Our learnability enhancement strategy integrates three efficient methods: shot noise augmentation (SNA), dark shading correction (DSC) and a developed image acquisition protocol. 
-            Specifically, SNA promotes the precision of data mapping by increasing the data volume of paired real data, DSC promotes the accuracy of data mapping by reducing the noise complexity, and the developed image acquisition protocol promotes the reliability of data mapping by improving the data quality of paired real data. 
-            Meanwhile, based on the developed image acquisition protocol, we build a new dataset for low-light raw image denoising. 
-            Experiments on public datasets and our dataset demonstrate the superiority of the learnability enhancement strategy. 
+          <p class="text-justify">Low-light Original Denoising (LOD) is a challenging task in Computational Photography (CP). 
+            The low number of photons in low light environments makes imaging very difficult. 
+            The most difficult step in LOD is to establish a noise model under low light. 
+            Currently, there are numerous approaches aim to noise modeling, however the noise established have significant differences from real noise due to the highly intricate distribution of noise. 
+            Towards this goal, this paper proposes an Extremely Low-light Noise Modeling (EL2NM) approach, which designs an original image condition constraint module and a multi-noise fusion module to generate complex noise consistent with real scenes. 
+            In order to satisfy the complex noise distribution in low-light environments instead of just Gaussian noise, we integrate various noises into cold diffusion to establish a realistic noise generation model for extremely low-light environments. 
+            At the same time, to avoid the image semantic misinterpret during the reverse diffusion process, we propose to use conditional image to guide noise generation of the diffusion model.  
+            Extensive experiments demonstrate that our proposed method EL2NM exhibits excellent performance in extremely low-light environments and achieves the state-of-the-art on Starlight Dataset. 
           </p>
           <!-- <img class="img-fluid" src="./images/pipeline.png" alt="teaser" width="90%"> -->
         </div>
